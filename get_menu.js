@@ -1,6 +1,19 @@
 /**
  * Created by Ruben on 1/24/14.
  */
+var now = new Date();
+var hours = now.getHours();
+var day = now.getDay();
+if(hours < 11) {
+    $('#meal').val('Breakfast');
+}
+else if(hours < 14) {
+    if(day > 5) $('#meal').val('Brunch');
+    else        $('#meal').val('Lunch');
+}
+else {
+    $('#meal').val('Dinner');
+}
 load_menu();
 $('#meal,#where').change(function(){
     load_menu();
