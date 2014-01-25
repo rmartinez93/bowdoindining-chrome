@@ -15,5 +15,5 @@ $('#meal,#unit').change(function(){
     load_menu();
 });
 function load_menu() {
-    $('.menus').load('http://diningwithstrangers.co/extension/get_menu.php?meal='+$('#meal').val()+'&unit='+$('#unit').val());
+    $('.menus').html('<div class="spinner">B</div>').load('http://diningwithstrangers.co/extension/get_menu.php?meal='+$('#meal').val()+'&unit='+$('#unit').val());
 }
