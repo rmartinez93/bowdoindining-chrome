@@ -3,10 +3,10 @@
 
     "name": "Bowdoin Dining",
     "description": "This extension for Bowdoin Students lets you access the Dining Hall menus from an extension.",
-    "version": "1.1.4",
+    "version": "1.1.6",
 
     "permissions": [
-        "http://diningwithstrangers.co/"
+        "http://DiningWithStrangers.co/"
     ],
     "browser_action": {
         "default_icon": "128.png",

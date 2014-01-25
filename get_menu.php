@@ -6,9 +6,15 @@
  * Time: 8:47 AM
  */
 
-$meal = $_GET['meal'];
-if($_GET['where'] == 'Thorne') $unit = 49;
-else $unit = 48;
+if(in_array($_GET['meal'], array("Breakfast","Brunch","Lunch","Dinner")) &&
+   in_array($_GET['unit'], array('48','49'))) {
+    $meal = $_GET['meal'];
+    $unit = $_GET['unit'];
+}
+else {
+    $meal = 'Breakfast';
+    $unit = 49;
+}
 
 $ch = curl_init();
 $timeout = 5;
