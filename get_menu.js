@@ -14,16 +14,24 @@ else if(hours < 14) {
 }
 else $('#meal').val('Dinner');
 load_menu();
+$('body').keyup(function(e) { 
+    if(e.which == 37) $('#back').trigger('click'); //Left Arrow
+    if(e.which == 39) $('#forward').trigger('click'); //Right Arrow
+});
 $('#meal,#unit').change(function(){
     load_menu();
 });
 $('#back').click(function(){
-    $('#days').val($('#days').val() - 1);
-    load_menu();
+    if($('#days').val() > -7) {
+        $('#days').val($('#days').val() - 1);
+        load_menu();
+    }
 });
 $('#forward').click(function(){
-    $('#days').val(parseInt($('#days').val())+parseInt(1));
-    load_menu();
+    if($('#days').val() < 30) {
+        $('#days').val(parseInt($('#days').val())+parseInt(1));
+        load_menu();
+    }
 });
 function load_menu() {
     var d2 = new Date(now);
