@@ -18,9 +18,12 @@ else {
 
 $ch = curl_init();
 $timeout = 5;
-curl_setopt($ch, CURLOPT_URL, 'http://www.bowdoin.edu/atreus/views?unit='.$unit.'&meal='.$meal);
+if($_GET['mo'] && $_GET['yr'] && $_GET['dy'])
+    curl_setopt($ch, CURLOPT_URL, 'http://www.bowdoin.edu/atreus/views?unit='.$unit.'&meal='.$meal.'&mo='.$_GET['mo'].'&dy='.$_GET['dy'].'&yr='.$_GET['yr']);
+else
+    curl_setopt($ch, CURLOPT_URL, 'http://www.bowdoin.edu/atreus/views?unit='.$unit.'&meal='.$meal);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 $data = curl_exec($ch);
 curl_close($ch);
-echo $data;
+echo $data; 

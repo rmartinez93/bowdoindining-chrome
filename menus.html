@@ -52,19 +52,28 @@
             width:245px;
             background-color:#fff;
         }
-        #unit {
-            margin-left:-1%;
-        }
         .menus {
             width:255px;
             height:400px;
             overflow-y:scroll;
             padding-bottom:10px;
         }
+        button {
+            display: inline-block;   
+            width: 20px;
+            height: 28px;
+            border: 0;
+            padding: 4px;
+            background-color: #007FFF;
+            font-weight: bold;
+            color: #FFF;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="wrapper">
+        <button id=back><</button>
         <select id="unit">
             <option value="48">Moulton</option>
             <option value="49"> Thorne</option>
@@ -75,6 +84,8 @@
             <option value="Lunch">    Lunch    </option>
             <option value="Dinner">   Dinner   </option>
         </select>
+        <button id=forward>></button>
+        <input id=days type=hidden value=0>
     </div>
     <div class="menus"></div>
     <b><small>A <a target="_blank" href="http://DiningWithStrangers.co">Dining with Strangers</a> App</small></b>
