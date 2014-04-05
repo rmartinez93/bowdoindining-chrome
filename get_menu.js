@@ -17,9 +17,18 @@ load_menu();
 $('body').keyup(function(e) { 
     if(e.which == 37) $('#back').trigger('click'); //Left Arrow
     if(e.which == 39) $('#forward').trigger('click'); //Right Arrow
+    if(e.which == 77) $('#unit').val('48').trigger('change'); //M for Moulton
+    if(e.which == 84) $('#unit').val('49').trigger('change'); //T for THorne
 });
 $('#meal,#unit').change(function(){
     load_menu();
+});
+var index = 0;
+$('#hoursLink').click(function(){
+    $('.menus').slideToggle();
+    $('.hours').slideToggle();
+    if((++index)%2) $('#hoursLink').html('Menus');
+    else $('#hoursLink').html('Hours');
 });
 $('#back').click(function(){
     if($('#days').val() > -7) {
@@ -34,17 +43,19 @@ $('#forward').click(function(){
     }
 });
 function load_menu() {
-    var d2 = new Date(now);
-    d2.setDate(d2.getDate() + parseInt($('#days').val()));
-    var month = d2.getMonth();
-    var day = d2.getDate();
-    var stringDay = day_of_week(d2.getDay());
-    var year = d2.getFullYear();
-    $('.menus').html('<div class="spinner">B</div>');
-    $.get('http://diningwithstrangers.co/extension/get_menu.php', { meal: $('#meal').val(), unit: $('#unit').val(), mo: month, dy: day, yr: year })
-     .done(function(data) {
-        $('.menus').html('<h3>'+stringDay+', '+(++month)+'/'+day+'/'+year+'</h3>'+data).find('strong, hr').remove();
-     });
+    if($('.menus').is(":visible")) {
+        var d2 = new Date(now);
+        d2.setDate(d2.getDate() + parseInt($('#days').val()));
+        var month = d2.getMonth();
+        var day = d2.getDate();
+        var stringDay = day_of_week(d2.getDay());
+        var year = d2.getFullYear();
+        $('.menus').html('<div class="spinner">B</div>');
+        $.get('http://diningwithstrangers.co/extension/get_menu.php', { meal: $('#meal').val(), unit: $('#unit').val(), mo: month, dy: day, yr: year })
+         .done(function(data) {
+            $('.menus').html('<h3>'+stringDay+', '+(++month)+'/'+day+'/'+year+'</h3>'+data).find('strong, hr').remove();
+         });
+    }
 }
 function day_of_week(i) {
     var day;

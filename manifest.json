@@ -3,7 +3,7 @@
 
     "name": "Bowdoin Dining",
     "description": "This extension for Bowdoin College lets you access the Dining Hall menus without having to leave your current page.",
-    "version": "1.5.7",
+    "version": "1.6",
 
     "permissions": [
         "http://diningwithstrangers.co/"

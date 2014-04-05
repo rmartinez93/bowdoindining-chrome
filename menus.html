@@ -21,18 +21,6 @@
             50% { -webkit-transform: perspective(120px) rotateY(180deg) }
             100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
         }
-        @keyframes rotateplane {
-            0% {
-                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
-            } 50% {
-                  transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-                  -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-              } 100% {
-                    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                }
-        }
         body {
             margin-right:0;
         }
@@ -49,17 +37,16 @@
             color:#007FFF
         }
         #wrapper {
-            width:245px;
+            width: 310px;
+            height: 400px;
+            overflow-y: scroll;
+        }
+        #controls {
+            width:310px;
             background-color:#fff;
         }
         #meal {
             margin-left: -1%;
-        }
-        .menus {
-            width:255px;
-            height:400px;
-            overflow-y:scroll;
-            padding-bottom:10px;
         }
         button {
             display: inline-block;   
@@ -76,10 +63,16 @@
             color: #406690;
             font-family: "Lucida Grande",Lucida,Verdana,sans-serif;
         }
+        .hours {
+            display: none;
+        }
+        .hours,.menus {
+            padding-bottom: 10px;
+        }
     </style>
 </head>
 <body>
-    <div id="wrapper">
+    <div id="controls">
         <select id="meal">
             <option value="Breakfast">Breakfast</option>
             <option value="Brunch">   Brunch   </option>
@@ -90,12 +83,46 @@
             <option value="48">Moulton</option>
             <option value="49"> Thorne</option>
         </select>
+        <button id=hoursLink style="width:50px;">Hours</button>
         <button id=back><</button>
         <button id=forward>></button>
         <input id=days type=hidden value=0>
     </div>
+    <div id="wrapper">
     <div class="menus"></div>
-    <b><small>A <a target="_blank" href="http://DiningWithStrangers.co">Dining with Strangers</a> App</small></b>
+    <div class="hours">
+    <h2>Thorne</h2>
+    <b>Monday - Friday</b><br>
+    Hot Breakfast	7:30am&#8212;9:30am<br>
+    Hot Lunch	11:30am&#8212;1:30pm<br>
+    Deli/Soup/Salad	11:00am&#8212;1:30pm<br>
+    Dinner	5:00pm&#8212;7:30pm<br><br>
+
+    <b>Thursday, Friday & Saturday</b><br>
+    Super Snack	10:00pm&#8212;1:00am<br><br>
+        
+    <b>Saturday & Sunday</b><br>
+    Brunch	11:00am&#8212;1:30pm<br>
+    Dinner	5:00pm&#8212;7:30pm<br><br>
+        
+    <h2>Moulton</h2>
+        
+    <b>Monday - Friday</b><br>
+    Hot Breakfast	7:15am&#8212;9:00am<br>
+    Continental Breakfast	9:00am&#8212;10:30am<br>
+    Lunch	11:00am&#8212;2:00pm<br>
+    Dinner	5:00pm&#8212;7:00pm<br><br>
+        
+    <b>Saturday & Sunday</b><br>
+    Breakfast	9:00am&#8212;11:00am<br>
+    Brunch	11:00am&#8212;12:30pm<br>
+    Dinner	5:00pm&#8212;7:00pm<br><br>
+    <b>Express Meals</b><br>
+    10:30am&#8212;2:45pm (T,Th)<br>
+    10:30am&#8212;2:30pm (M, W, F)<br>
+    5:00pm&#8212;8:00pm<br>
+    </div>
+    </div>
     <script src=get_menu.js></script>
 </body>
 </html>
