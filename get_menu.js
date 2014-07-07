@@ -48,7 +48,7 @@ function load_menu() {
         var stringDay = day_of_week(d2.getDay());
         var year = d2.getFullYear();
         $('.menus').html('<div class="spinner">B</div>');
-        $.get('http://diningwithstrangers.co/extension/get_menu.php', { meal: $('#meal').val(), unit: $('#unit').val(), mo: month, dy: day, yr: year })
+        $.get('http://bowdoin-dining.herokuapp.com/get_menu.php', { meal: $('#meal').val(), unit: $('#unit').val(), mo: month, dy: day, yr: year })
          .done(function(data) {
             $('.menus').html('<h3>'+stringDay+', '+(++month)+'/'+day+'/'+year+'</h3>'+data).find('strong, hr').remove();
          });

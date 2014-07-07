@@ -6,7 +6,7 @@
     "version": "1.6",
 
     "permissions": [
-        "http://diningwithstrangers.co/"
+        "http://bowdoin-dining.herokuapp.com/"
     ],
     "browser_action": {
         "default_icon": "128.png",
