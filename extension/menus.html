@@ -2,74 +2,8 @@
 <html>
 		<head>
 				<title>Bowdoin Dining</title>
-				<script src=jquery.min.js></script>
-				<style>
-						.spinner {
-								width: 30px;
-								background-color: #333;
-								color:#fff;
-								font-weight:bold;
-								text-align:center;
-								padding-top:5px;
-								height:25px;
-								margin: 100px auto;
-								-webkit-animation: rotateplane .5s infinite ease-in-out;
-								animation: rotateplane .5s infinite ease-in-out;
-						}
-						@-webkit-keyframes rotateplane {
-								0% { -webkit-transform: perspective(120px) }
-								50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-								100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-						}
-						body {
-								margin-right:0;
-						}
-						select {
-								padding: 4px;
-						}
-						small {
-								background-color:#fff;
-								padding:5px 0;
-						}
-						a {
-								cursor:pointer;
-								text-decoration:none;
-								color:#007FFF
-						}
-						#wrapper {
-								width: 295px;
-								height: 400px;
-								overflow-y: scroll;
-						}
-						#controls {
-								width:295px;
-								background-color:#fff;
-						}
-						#meal {
-								margin-left: -1%;
-						}
-						button {
-								display: inline-block;   
-								width: 28px;
-								border: 0;
-								padding: 4px;
-								background-color: #007FFF;
-								font-weight: bold;
-								color: #FFF;
-								cursor: pointer;
-						}
-						h3 {
-								font-size: 13px;
-								color: #406690;
-								font-family: "Lucida Grande",Lucida,Verdana,sans-serif;
-						}
-						.hours {
-								display: none;
-						}
-						.hours,.menus {
-								padding-bottom: 10px;
-						}
-				</style>
+				<link rel="stylesheet" type="text/css" href="styles.css" />
+				<script src="js/jquery.min.js"></script>
 		</head>
 		<body>
 				<div id="controls">
@@ -123,6 +57,6 @@
 						5:00pm&#8212;8:00pm<br>
 						</div>
 				</div>
-				<script src="get_menu.js"></script>
+				<script src="js/get_menu.js"></script>
 		</body>
 </html>
