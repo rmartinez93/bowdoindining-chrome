@@ -16,19 +16,16 @@ else $('#meal').val('Dinner');
 load_menu();
 $('body').keyup(function(e) { 
     if(e.which == 37) $('#back').trigger('click'); //Left Arrow
-    if(e.which == 39) $('#forward').trigger('click'); //Right Arrow
-    if(e.which == 77) $('#unit').val('48').trigger('change'); //M for Moulton
-    if(e.which == 84) $('#unit').val('49').trigger('change'); //T for THorne
+    else if(e.which == 39) $('#forward').trigger('click'); //Right Arrow
+    else if(e.which == 77) $('#unit').val('48').trigger('change'); //M for Moulton
+    else if(e.which == 84) $('#unit').val('49').trigger('change'); //T for THorne
 });
 $('#meal,#unit').change(function(){
     load_menu();
 });
-var index = 0;
 $('#hoursLink').click(function(){
     $('.menus').slideToggle();
     $('.hours').slideToggle();
-    if((++index)%2) $('#hoursLink').html('Menus');
-    else $('#hoursLink').html('Hours');
 });
 $('#back').click(function(){
     if($('#days').val() > -7) {

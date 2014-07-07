@@ -1,128 +1,128 @@
 <!doctype html>
 <html>
-<head>
-    <title>Dining with Strangers | A Social Discover App for Dining Enthusiasts</title>
-    <script src=jquery.min.js></script>
-    <style>
-        .spinner {
-            width: 30px;
-            background-color: #333;
-            color:#fff;
-            font-weight:bold;
-            text-align:center;
-            padding-top:5px;
-            height:25px;
-            margin: 100px auto;
-            -webkit-animation: rotateplane .5s infinite ease-in-out;
-            animation: rotateplane .5s infinite ease-in-out;
-        }
-        @-webkit-keyframes rotateplane {
-            0% { -webkit-transform: perspective(120px) }
-            50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-            100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-        }
-        body {
-            margin-right:0;
-        }
-        select {
-            padding: 4px;
-        }
-        small {
-            background-color:#fff;
-            padding:5px 0;
-        }
-        a {
-            cursor:pointer;
-            text-decoration:none;
-            color:#007FFF
-        }
-        #wrapper {
-            width: 310px;
-            height: 400px;
-            overflow-y: scroll;
-        }
-        #controls {
-            width:310px;
-            background-color:#fff;
-        }
-        #meal {
-            margin-left: -1%;
-        }
-        button {
-            display: inline-block;   
-            width: 28px;
-            border: 0;
-            padding: 4px;
-            background-color: #007FFF;
-            font-weight: bold;
-            color: #FFF;
-            cursor: pointer;
-        }
-        h3 {
-            font-size: 13px;
-            color: #406690;
-            font-family: "Lucida Grande",Lucida,Verdana,sans-serif;
-        }
-        .hours {
-            display: none;
-        }
-        .hours,.menus {
-            padding-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div id="controls">
-        <select id="meal">
-            <option value="Breakfast">Breakfast</option>
-            <option value="Brunch">   Brunch   </option>
-            <option value="Lunch">    Lunch    </option>
-            <option value="Dinner">   Dinner   </option>
-        </select>
-        <select id="unit">
-            <option value="48">Moulton</option>
-            <option value="49"> Thorne</option>
-        </select>
-        <button id=hoursLink style="width:50px;">Hours</button>
-        <button id=back><</button>
-        <button id=forward>></button>
-        <input id=days type=hidden value=0>
-    </div>
-    <div id="wrapper">
-    <div class="menus"></div>
-    <div class="hours">
-    <h2>Thorne</h2>
-    <b>Monday - Friday</b><br>
-    Hot Breakfast	7:30am&#8212;9:30am<br>
-    Hot Lunch	11:30am&#8212;1:30pm<br>
-    Deli/Soup/Salad	11:00am&#8212;1:30pm<br>
-    Dinner	5:00pm&#8212;7:30pm<br><br>
+		<head>
+				<title>Bowdoin Dining</title>
+				<script src=jquery.min.js></script>
+				<style>
+						.spinner {
+								width: 30px;
+								background-color: #333;
+								color:#fff;
+								font-weight:bold;
+								text-align:center;
+								padding-top:5px;
+								height:25px;
+								margin: 100px auto;
+								-webkit-animation: rotateplane .5s infinite ease-in-out;
+								animation: rotateplane .5s infinite ease-in-out;
+						}
+						@-webkit-keyframes rotateplane {
+								0% { -webkit-transform: perspective(120px) }
+								50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+								100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+						}
+						body {
+								margin-right:0;
+						}
+						select {
+								padding: 4px;
+						}
+						small {
+								background-color:#fff;
+								padding:5px 0;
+						}
+						a {
+								cursor:pointer;
+								text-decoration:none;
+								color:#007FFF
+						}
+						#wrapper {
+								width: 295px;
+								height: 400px;
+								overflow-y: scroll;
+						}
+						#controls {
+								width:295px;
+								background-color:#fff;
+						}
+						#meal {
+								margin-left: -1%;
+						}
+						button {
+								display: inline-block;   
+								width: 28px;
+								border: 0;
+								padding: 4px;
+								background-color: #007FFF;
+								font-weight: bold;
+								color: #FFF;
+								cursor: pointer;
+						}
+						h3 {
+								font-size: 13px;
+								color: #406690;
+								font-family: "Lucida Grande",Lucida,Verdana,sans-serif;
+						}
+						.hours {
+								display: none;
+						}
+						.hours,.menus {
+								padding-bottom: 10px;
+						}
+				</style>
+		</head>
+		<body>
+				<div id="controls">
+						<select id="meal">
+								<option value="Breakfast">Breakfast</option>
+								<option value="Brunch">   Brunch   </option>
+								<option value="Lunch">    Lunch    </option>
+								<option value="Dinner">   Dinner   </option>
+						</select>
+						<select id="unit">
+								<option value="48">Moulton</option>
+								<option value="49"> Thorne</option>
+						</select>
+						<button id="back"><</button>
+						<button id="forward">></button>
+						<button id="hoursLink" style="width:auto;">Hours</button>
+						<input id="days" type="hidden" value="0">
+				</div>
+				<div id="wrapper">
+						<div class="menus"></div>
+						<div class="hours">
+						<h2>Thorne</h2>
+						<b>Monday - Friday</b><br>
+						Hot Breakfast	7:30am&#8212;9:30am<br>
+						Hot Lunch	11:30am&#8212;1:30pm<br>
+						Deli/Soup/Salad	11:00am&#8212;1:30pm<br>
+						Dinner	5:00pm&#8212;7:30pm<br><br>
 
-    <b>Thursday, Friday & Saturday</b><br>
-    Super Snack	10:00pm&#8212;1:00am<br><br>
-        
-    <b>Saturday & Sunday</b><br>
-    Brunch	11:00am&#8212;1:30pm<br>
-    Dinner	5:00pm&#8212;7:30pm<br><br>
-        
-    <h2>Moulton</h2>
-        
-    <b>Monday - Friday</b><br>
-    Hot Breakfast	7:15am&#8212;9:00am<br>
-    Continental Breakfast	9:00am&#8212;10:30am<br>
-    Lunch	11:00am&#8212;2:00pm<br>
-    Dinner	5:00pm&#8212;7:00pm<br><br>
-        
-    <b>Saturday & Sunday</b><br>
-    Breakfast	9:00am&#8212;11:00am<br>
-    Brunch	11:00am&#8212;12:30pm<br>
-    Dinner	5:00pm&#8212;7:00pm<br><br>
-    <b>Express Meals</b><br>
-    10:30am&#8212;2:45pm (T,Th)<br>
-    10:30am&#8212;2:30pm (M, W, F)<br>
-    5:00pm&#8212;8:00pm<br>
-    </div>
-    </div>
-    <script src=get_menu.js></script>
-</body>
+						<b>Thursday, Friday & Saturday</b><br>
+						Super Snack	10:00pm&#8212;1:00am<br><br>
+
+						<b>Saturday & Sunday</b><br>
+						Brunch	11:00am&#8212;1:30pm<br>
+						Dinner	5:00pm&#8212;7:30pm<br><br>
+
+						<h2>Moulton</h2>
+
+						<b>Monday - Friday</b><br>
+						Hot Breakfast	7:15am&#8212;9:00am<br>
+						Continental Breakfast	9:00am&#8212;10:30am<br>
+						Lunch	11:00am&#8212;2:00pm<br>
+						Dinner	5:00pm&#8212;7:00pm<br><br>
+
+						<b>Saturday & Sunday</b><br>
+						Breakfast	9:00am&#8212;11:00am<br>
+						Brunch	11:00am&#8212;12:30pm<br>
+						Dinner	5:00pm&#8212;7:00pm<br><br>
+						<b>Express Meals</b><br>
+						10:30am&#8212;2:45pm (T,Th)<br>
+						10:30am&#8212;2:30pm (M, W, F)<br>
+						5:00pm&#8212;8:00pm<br>
+						</div>
+				</div>
+				<script src="get_menu.js"></script>
+		</body>
 </html>
