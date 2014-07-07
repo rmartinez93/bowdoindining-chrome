@@ -43,19 +43,27 @@ a {
 		margin-left: -1%;
 }
 button {
-		display: inline-block;   
+		display: inline-block;  
+		font-size: 20px;
 		width: 28px;
 		border: 0;
 		padding: 4px;
 		background-color: #007FFF;
-		font-weight: bold;
 		color: #FFF;
 		cursor: pointer;
+}
+select {
+		float: right;
+		font-size: 20px;
+		margin-top: 5px;
 }
 h3 {
 		font-size: 13px;
 		color: #406690;
 		font-family: "Lucida Grande",Lucida,Verdana,sans-serif;
+}
+#hoursLink {
+		border-radius: 25px;
 }
 .hours {
 		display: none;
