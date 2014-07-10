@@ -15,21 +15,6 @@
 		50% { -webkit-transform: perspective(120px) rotateY(180deg) }
 		100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
 }
-body {
-		margin-right:0;
-}
-select {
-		padding: 4px;
-}
-small {
-		background-color:#fff;
-		padding:5px 0;
-}
-a {
-		cursor:pointer;
-		text-decoration:none;
-		color:#007FFF
-}
 #wrapper {
 		width: 295px;
 		height: 400px;
@@ -38,11 +23,22 @@ a {
 #controls {
 		width:295px;
 		background-color:#fff;
+		padding: 5px 0;
 }
 #meal {
 		margin-left: -1%;
 }
+#hoursLink {
+		border-radius: 25px;
+}
+.hours {
+		display: none;
+}
+.hours,.menus {
+		padding-bottom: 10px;
+}
 button {
+		outline: none;
 		display: inline-block;  
 		font-size: 20px;
 		width: 28px;
@@ -53,20 +49,23 @@ button {
 		cursor: pointer;
 }
 select {
+		outline: none;
 		float: right;
-		font-size: 16px;
+		font-size: 12px;
+		padding: 4px;
+		min-height: 32px;
 }
 h3 {
 		font-size: 13px;
 		color: #406690;
 		font-family: "Lucida Grande",Lucida,Verdana,sans-serif;
 }
-#hoursLink {
-		border-radius: 25px;
+small {
+		background-color:#fff;
+		padding:5px 0;
 }
-.hours {
-		display: none;
-}
-.hours,.menus {
-		padding-bottom: 10px;
+a {
+		cursor:pointer;
+		text-decoration:none;
+		color:#007FFF
 }

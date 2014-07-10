@@ -53,7 +53,7 @@ function load_menu() {
         $('.menus').html('<div class="spinner">B</div>');
         $.get('http://bowdoin-dining.herokuapp.com/extension/get_menu.php', { meal: $('#meal').val(), unit: $('#unit').val(), mo: month, dy: day, yr: year })
          .done(function(data) {
-            $('.menus').html('<h3>'+stringDay+', '+(++month)+'/'+day+'/'+year+'</h3>'+data).find('strong, hr').remove();
+            $('.menus').html('<h2 style="margin-top:5px">'+stringDay+', '+(++month)+'/'+day+'/'+year+'</h2>'+data).find('strong, hr').remove();
          });
     }
 }
