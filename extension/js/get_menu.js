@@ -52,8 +52,10 @@ function load_menu() {
         var year = d2.getFullYear();
         $('.menus').html('<div class="spinner">B</div>');
         $.get('http://bowdoin-dining.herokuapp.com/extension/get_menu.php', { meal: $('#meal').val(), unit: $('#unit').val(), mo: month, dy: day, yr: year })
-         .done(function(data) {
-            $('.menus').html('<h2 style="margin-top:5px">'+stringDay+', '+(++month)+'/'+day+'/'+year+'</h2>'+data).find('strong, hr').remove();
+         .done(function(data) {	
+						var noScript = $('<div>'+data.replace(/script/g, "noscript")+'</div>');
+						noScript.find('noscript, strong, hr, meta, title').remove();
+            $('.menus').html('<h2 style=margin-top:5px>'+stringDay+', '+(++month)+'/'+day+'/'+year+'</h2>').append(noScript);
          });
     }
 }
