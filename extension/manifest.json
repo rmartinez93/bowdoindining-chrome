@@ -2,8 +2,8 @@
     "manifest_version": 2,
 
     "name": "Bowdoin Dining",
-    "description": "This Chrome extension for Bowdoin College lets you see the Dining Hall menus without having to leave your current page or find your phone.",
-    "version": "1.6",
+    "description": "This Chrome extension for Bowdoin College lets you see the Dining Hall menus without having to leave your current page.",
+    "version": "1.8",
 
     "permissions": [
         "http://bowdoin-dining.herokuapp.com/"
