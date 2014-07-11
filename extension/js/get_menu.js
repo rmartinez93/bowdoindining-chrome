@@ -4,6 +4,9 @@
 var now = new Date();
 var hours = now.getHours();
 var day = now.getDay();
+var leftIsDisabled = true;
+var rightIsDisabled = false;
+
 if(hours < 11 && day > 0 && day < 6)
     $('#meal').val('Breakfast');
 else if(hours < 14) {
@@ -32,25 +35,35 @@ $('#hoursLink').click(function(){
 		}
 		else {
 				$('#hoursLink').addClass('ion-ios7-clock').removeClass('ion-fork');
-				$('select, #forward, #back').removeAttr('disabled');
+				$('select').removeAttr('disabled');
+				if(!leftIsDisabled)  $('#back').removeAttr('disabled');
+				if(!rightIsDisabled) $('#forward').removeAttr('disabled');
 		}
 });
 $('#back').click(function(){
     if($('#days').val() > 0) {
-				if($('#days').val() == 1) 
+				if($('#days').val() == 1) {
 						$('#back').attr('disabled', true);
-				if($('#days').val() == 6)
+						leftIsDisabled = true;
+				}
+				if($('#days').val() == 6) {
 						$('#forward').removeAttr('disabled');
+						rightIsDisabled = false;
+				}
         $('#days').val($('#days').val() - 1);
         load_menu();
     }
 });
 $('#forward').click(function(){
     if($('#days').val() < 6) {
-				if($('#days').val() == 0) 
+				if($('#days').val() == 0) {
 						$('#back').removeAttr('disabled');
-				if($('#days').val() == 5)
+						leftIsDisabled = false;
+				}
+				if($('#days').val() == 5) {
 						$('#forward').attr('disabled', true);
+						rightIsDisabled = true;
+				}
         $('#days').val(parseInt($('#days').val())+parseInt(1));
         load_menu();
     }
