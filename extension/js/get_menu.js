@@ -26,38 +26,50 @@ $('#meal,#unit').change(function(){
 $('#hoursLink').click(function(){
     $('.menus').slideToggle();
     $('.hours').slideToggle();
-		if($('#hoursLink').hasClass('ion-ios7-clock'))
+		if($('#hoursLink').hasClass('ion-ios7-clock')) {
 				$('#hoursLink').addClass('ion-fork').removeClass('ion-ios7-clock');
-		else $('#hoursLink').addClass('ion-ios7-clock').removeClass('ion-fork');
+				$('select, #forward, #back').attr('disabled', true);
+		}
+		else {
+				$('#hoursLink').addClass('ion-ios7-clock').removeClass('ion-fork');
+				$('select, #forward, #back').removeAttr('disabled');
+		}
 });
 $('#back').click(function(){
-    if($('#days').val() > -7) {
+    if($('#days').val() > 0) {
+				if($('#days').val() == 1) 
+						$('#back').attr('disabled', true);
+				if($('#days').val() == 6)
+						$('#forward').removeAttr('disabled');
         $('#days').val($('#days').val() - 1);
         load_menu();
     }
 });
 $('#forward').click(function(){
-    if($('#days').val() < 30) {
+    if($('#days').val() < 6) {
+				if($('#days').val() == 0) 
+						$('#back').removeAttr('disabled');
+				if($('#days').val() == 5)
+						$('#forward').attr('disabled', true);
         $('#days').val(parseInt($('#days').val())+parseInt(1));
         load_menu();
     }
 });
 function load_menu() {
-    if($('.menus').is(":visible")) {
-        var d2 = new Date(now);
-        d2.setDate(d2.getDate() + parseInt($('#days').val()));
-        var month = d2.getMonth();
-        var day = d2.getDate();
-        var stringDay = day_of_week(d2.getDay());
-        var year = d2.getFullYear();
-        $('.menus').html('<div class="spinner">B</div>');
-        $.get('http://bowdoin-dining.herokuapp.com/extension/get_menu.php', { meal: $('#meal').val(), unit: $('#unit').val(), mo: month, dy: day, yr: year })
-         .done(function(data) {	
-						var noScript = $('<div>'+data.replace(/script/g, "noscript")+'</div>');
-						noScript.find('noscript, strong, hr, meta, title').remove();
-            $('.menus').html('<h2 style=margin-top:5px>'+stringDay+', '+(++month)+'/'+day+'/'+year+'</h2>').append(noScript);
-         });
-    }
+		var d2 = new Date(now);
+		d2.setDate(d2.getDate() + parseInt($('#days').val()));
+		var year 	= d2.getFullYear();
+		var month = d2.getMonth();
+		var day 	= d2.getDate();
+		var stringDay = day_of_week(d2.getDay());
+		$('.menus').html('<div class="spinner">B</div>');
+		$.get('http://bowdoin-dining.herokuapp.com/extension/get_menu.php', 
+					{ meal: $('#meal').val(), unit: $('#unit').val(), mo: month, dy: day, yr: year })
+		 .done(function(data) {	
+				var clean = $('<div>'+data.replace(/script/g, "noscript")+'</div>');
+				clean.find('noscript, strong, hr, meta, title, div, style, p').remove();
+				$('.menus').html('<h2 style=margin-top:5px>'+stringDay+'</h2>').append(clean);
+		 });
 }
 function day_of_week(i) {
     var day;
