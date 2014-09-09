@@ -5,5 +5,5 @@ Javascript and PHP to scrape menu information from
 Bowdoin Dining's own website, format it, and present it 
 in a nice wrapper for Google Chrome.
 
-![Screenshot 1](/Screenshots/1.PNG)
-![Screenshot 2](/Screenshots/2.PNG)
+![Screenshot 1](/Screenshots/1.png)
+![Screenshot 2](/Screenshots/2.png)
