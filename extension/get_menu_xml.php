@@ -29,7 +29,7 @@ $cookiedomain = str_replace("http://www.","",$base);
 $cookiedomain = str_replace("https://www.","",$cookiedomain);
 $cookiedomain = str_replace("www.","",$cookiedomain);
 
-$url = $base . $_SERVER['REQUEST_URI'];
+$url = $base;
 
 if($_SERVER['HTTPS'] == 'on'){
         $mydomain = 'https://'.$_SERVER['HTTP_HOST'];
