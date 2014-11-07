@@ -96,10 +96,10 @@ if (curl_error($curlSession)){
                         header(trim($v));
                 }
         }
-
+				header("access-control-allow-origin: *");
   //rewrite all hard coded urls to ensure the links still work!
         $body = str_replace($base,$mydomain,$body);
-
+	
         print $body;
 
 }
