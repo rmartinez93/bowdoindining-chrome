@@ -3,7 +3,7 @@
 
     "name": "Bowdoin Dining",
     "description": "This Chrome extension for Bowdoin College lets you see the Dining Hall menus without having to leave your current page.",
-    "version": "2.0.0",
+    "version": "3.0.2",
 
     "permissions": [
         "http://bowdoin-dining.herokuapp.com/"

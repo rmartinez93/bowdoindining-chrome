@@ -3,79 +3,18 @@
 		<head>
 				<title>Bowdoin Dining</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-				<meta name="apple-mobile-web-app-capable" content="yes">
-				<link rel="stylesheet" type="text/css" href="css/styles.css" />
-				<link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
-				<script src="js/jquery.min.js"></script>
+				<style>
+					html, body, iframe {
+						padding: 0;
+						margin: 0;
+						border: 0;
+						width: 320px;
+						height: 500px;
+						background: #000;
+					}
+				</style>
 		</head>
 		<body>
-				<div id="controls">
-						<button id="back" class="ionicons ion-chevron-left" disabled></button>
-						<button id="forward" class="ionicons ion-chevron-right"></button>
-						<button id="hoursLink" class="ionicons ion-ios7-clock"></button>
-						<input id="days" type="hidden" value="0">
-						
-						<select id="unit">
-								<option value="48">Moulton</option>
-								<option value="49"> Thorne</option>
-						</select>
-						<select id="meal">
-								<option value="Breakfast">Breakfast</option>
-								<option value="Brunch">   Brunch   </option>
-								<option value="Lunch">    Lunch    </option>
-								<option value="Dinner">   Dinner   </option>
-						</select>
-				</div>
-				<div id="wrapper">
-						<div class="menus"></div>
-						<div class="hours">
-						<h2>Thorne</h2>
-						<h3>Monday - Friday</h3>
-						<b>Hot Breakfast</b><br>
-						7:30am - 9:30am<br>
-						<b>Hot Lunch</b><br>
-						11:30am - 1:30pm<br>
-						<b>Deli/Soup/Salad</b><br>
-						11:00am - 1:30pm<br>
-						<b>Dinner</b><br>
-						5:00pm - 7:30pm<br>
-
-						<h3>Thursday, Friday & Saturday</h3>
-						<b>Super Snack</b><br>
-						10:00pm - 1:00am<br>
-
-						<h3>Saturday & Sunday</h3>
-						<b>Brunch</b><br>
-						11:00am - 1:30pm<br>
-						<b>Dinner</b><br>
-						5:00pm - 7:30pm<br>
-
-						<h2>Moulton</h2>
-
-						<h3>Monday - Friday</h3>
-						<b>Hot Breakfast</b><br>
-						7:15am - 9:00am<br>
-						<b>Continental Breakfast</b><br>
-						9:00am - 10:30am<br>
-						<b>Lunch</b><br>
-						11:00am - 2:00pm<br>
-						<b>Dinner</b><br>
-						5:00pm - 7:00pm<br>
-
-						<h3>Saturday & Sunday</h3>
-						<b>Breakfast</b><br>
-						9:00am - 11:00am<br>
-						<b>Brunch</b><br>
-						11:00am - 12:30pm<br>
-						<b>Dinner</b><br>
-						5:00pm - 7:00pm<br>
-							
-						<h3>Express Meals</h3>
-						10:30am - 2:45pm (T,Th)<br>
-						10:30am - 2:30pm (M, W, F)<br>
-						5:00pm - 8:00pm<br>
-						</div>
-				</div>
-				<script src="js/get_menu.js"></script>
+				<iframe src="http://bowdoindining.meteor.com"></iframe>
 		</body>
 </html>
