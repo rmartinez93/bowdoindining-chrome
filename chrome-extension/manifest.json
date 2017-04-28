@@ -6,7 +6,7 @@
     "version": "3.0.5",
 
     "permissions": [
-        "http://bowdoindining.meteorapp.com/"
+        "https://bowdoin.menu/"
     ],
     "browser_action": {
         "default_icon": "images/128.png",
